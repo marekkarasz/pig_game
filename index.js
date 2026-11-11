@@ -56,7 +56,7 @@ rollDice.addEventListener("click", function () {
 holdScore.addEventListener("click", function () {
   //  add current score to active player score
   finalScore[activePlayer] += currentScore;
-  document.getElementById(`current--${activePlayer}`).textContent =
+  document.getElementById(`score--${activePlayer}`).textContent =
     finalScore[activePlayer];
 
   // check if score is at least 100
