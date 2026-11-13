@@ -165,6 +165,15 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
+.winner-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: greenyellow;
+  padding: 1rem 1.5rem;
+  font-size: 3rem;
+}
 .hidden {
   display: none;
 }
