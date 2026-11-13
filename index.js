@@ -2,12 +2,12 @@
 // player 1
 const score_0 = document.getElementById("score--0");
 const current_0 = document.getElementById("current--0");
-const player_1 = document.querySelector(".player--1");
+const player_1 = document.querySelector(".player--0");
 
 // player 2
 const score_1 = document.getElementById("score--1");
 const current_1 = document.getElementById("current--1");
-const player_2 = document.querySelector(".player--2");
+const player_2 = document.querySelector(".player--1");
 
 // buttons
 const dice_El = document.querySelector(".dice");
@@ -32,10 +32,14 @@ const init = function () {
   current_1.textContent = 0;
 
   dice_El.classList.add("hidden");
-  player_1.classList.remove("player-winner");
-  player_2.classList.remove("player-winner");
+  player_1.classList.remove("player--winner");
+  player_2.classList.remove("player--winner");
   player_1.classList.add("player--active");
   player_2.classList.remove("player--active");
+
+  rollDice.classList.remove("hidden");
+  holdScore.classList.remove("hidden");
+  winner.classList.add("hidden");
 };
 init();
 
@@ -79,14 +83,14 @@ holdScore.addEventListener("click", function () {
   }
 
   // check if score is at least 100
-  if (finalScore[activePlayer] >= 100) {
+  if (finalScore[activePlayer] >= 20) {
     // Finish the game
     gameState = false;
     dice_El.classList.add("hidden");
     rollDice.classList.add("hidden");
     holdScore.classList.add("hidden");
     winner.classList.remove("hidden");
-    winner.textContent = `Player ${activePlayer} WON!`;
+    winner.textContent = `Player ${activePlayer + 1} WON!`;
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add("player--winner");
